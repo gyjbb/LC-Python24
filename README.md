@@ -60,7 +60,7 @@ class Solution:
 ## 78.Subsets
 [leetcode](https://leetcode.com/problems/subsets/)\
 Here we need to collect the results in every tree node, not just leaf nodes. The results lie in every layer of recursion. The process is very similar to recursion and backtracking.\
-The termination condition here is startIndex equals or is largerr than the size of given numbers, which means we have reached at the leaf nodes.
+The termination condition here is startIndex equals or is larger than the size of given numbers, which means we have reached at the leaf nodes.
 ```python
 # ways 1: 
 class Solution:
@@ -71,7 +71,7 @@ class Solution:
         return result
 
     def backtracking(self, nums, startIndex, path, result):
-        result.append(path[:])  # collect the rresult, put this line before thec! Otherwise the leaf nodes will be emitted.
+        result.append(path[:])  # collect the result, put this line before the termination condition! Otherwise the leaf nodes will be emitted.
         if startIndex >= len(nums):  # termination condition
             return
         for i in range(startIndex, len(nums)):
