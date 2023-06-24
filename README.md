@@ -1,7 +1,7 @@
 # LC-Python24
 Backtracking 4
 
-## 93.Restore IP Addresses
+## 93.Restore IP Addresses, 78.Subsets
 
 June 17, 2023  4h
 
@@ -57,11 +57,28 @@ class Solution:
 ```
 
 
-## 78.
-子集  子集问题，就是收集树形结构中，每一个节点的结果。 整体代码其实和 回溯模板都是差不多的。 
+## 78.Subsets
+[leetcode](https://leetcode.com/problems/subsets/)\
+Here we need to collect the results in every tree node, not just leaf nodes. The results lie in every layer of recursion. The process is very similar to recursion and backtracking.\
+The termination condition here is startIndex equals or is largerr than the size of given numbers, which means we have reached at the leaf nodes.
+```python
+# ways 1: 
+class Solution:
+    def subsets(self, nums):
+        result = []
+        path = []
+        self.backtracking(nums, 0, path, result)
+        return result
 
-
-
+    def backtracking(self, nums, startIndex, path, result):
+        result.append(path[:])  # collect the rresult, put this line before thec! Otherwise the leaf nodes will be emitted.
+        if startIndex >= len(nums):  # termination condition
+            return
+        for i in range(startIndex, len(nums)):
+            path.append(nums[i])
+            self.backtracking(nums, i + 1, path, result)
+            path.pop()
+```
 
 
 ## 90.
