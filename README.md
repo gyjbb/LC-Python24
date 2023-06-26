@@ -1,7 +1,7 @@
 # LC-Python24
 Backtracking 4
 
-## 93.Restore IP Addresses, 78.Subsets
+## 93.Restore IP Addresses, 78.Subsets, 90.Subsets II
 
 June 17, 2023  4h
 
@@ -81,8 +81,14 @@ class Solution:
 ```
 
 
-## 90.
-子集II 大家之前做了 40.组合总和II 和 78.子集 ，本题就是这两道题目的结合，建议自己独立做一做，本题涉及的知识，之前都讲过，没有新内容。
+## 90.Subsets II
+[leetcode](https://leetcode.com/problems/subsets-ii/)\
+Compared to the last question, the set given may contain duplicated items. This will ccause dupliactes in the results, which is not required. \
+Then how to **remove duplicates**? Here we define a **used array** to record the processed items. \
+Just need to remove duplicates in the same tree layer/tree width, while duplicates in the tree branch/depth is allowed.
+```python
+
+```
 
 
 
